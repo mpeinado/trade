@@ -1,0 +1,16 @@
+.negative {
+    color: #FF0000
+} 
+
+.positive{
+    color: #28B808;
+}
+
+.stock-info .stock-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.stock-price {
+    margin-top: 10px;
+}

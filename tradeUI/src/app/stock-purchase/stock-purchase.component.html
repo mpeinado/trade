@@ -1,0 +1,32 @@
+<div class="row">
+	<div class="col-6">
+		<!-- Search stocks-->
+		<app-stock-quote-lookup (getQuote)="getQuote($event)"></app-stock-quote-lookup>
+		
+		
+		<!-- Stock Info / Quote -->
+		<app-company-info [stockQuote]="stockQuote"></app-company-info>
+		
+		
+		<!-- Buy Stock -->
+		<app-place-stock-order [stockQuote]="stockQuote" (placeOrder)="placeOrder($event)"></app-place-stock-order>
+
+		<!-- order status -->
+		<app-order-status [stockOrder]="stockOrder"></app-order-status>
+	</div>
+
+	<!-- list of stock orders -->
+	<div class="col-6">
+			<h2>Stock Orders</h2>
+			<ul class="list-group">
+				<li class="list-group-item" *ngFor="let order of stockOrders" >
+					<span> OrderID: {{order.orderID}} </span>
+					<span> Ticker: {{order.orderTicker}} </span> 
+					<span> Order Total: {{order.orderTotal | currency:'USD'}}</span> 
+				</li>
+			</ul>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-6">
+    <h2>Quote Lookup</h2>
+
+    <form (submit)="fireGetQuote(ticker)">
+      <div class="form-group">
+        <label for="symbol">Search for a company</label>
+        <input type="text" class="form-control" id="symbol" name="symbol" placeholder="e.g. AAPl" 
+          [(ngModel)]="ticker"
+          [ngbTypeahead]="stockTickerSearch"
+          (focus)="focus$.next($event.target.value)"
+          (click)="click$.next($event.target.value)"
+          #instance="ngbTypeahead">
+      </div>
+
+      <button class="btn btn-primary">Get Quote</button>
+    </form>
+  </div> 
+</div>

@@ -1,0 +1,28 @@
+<div *ngIf="stockQuote" class="row">
+  <div class="col-6 stock-order">
+    <h2>Make Stock Purchase</h2>
+
+    <div class="company-name">{{stockQuote.companyName}} ({{stockQuote.symbol}})</div>
+
+    <form  (submit)="firePlaceOrder(stockQuote.symbol, orderQuantity, stockQuote.latestPrice)" class="stock-order-form">
+      <div class="form-group">
+        <label for="stock-quantity">Quantity</label>
+        <input type="number" class="form-control" 
+          id="stock-quantity"  name="stock-quantity"
+          placeholder="12" [(ngModel)]="orderQuantity">
+      </div>
+
+      <div class="form-group">
+          <label for="order-total">Order Total</label>
+          <input type="text" class="form-control" id="order-total" 
+            name="order-total"
+            value="{{stockQuote.latestPrice * orderQuantity | currency:'USD'}}" 
+            readonly>
+        </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Place Order</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+<div *ngIf="stockQuote" class="row stock-info">
+  <div class="col-6">
+    <div class="row">
+      <div class="col">
+        <div class="stock-name">
+          {{stockQuote.companyName}} ({{stockQuote.symbol}})
+        </div>
+      </div>
+    </div>
+
+    <div class="row stock-price">
+      <div class="col">
+        <div class="price-close">
+          {{stockQuote.latestPrice | currency:'USD'}}
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="change" [class.negative]="stockQuote.change < 0" [class.positive]="stockQuote.change >= 0">
+          <span class="change-dollars">{{stockQuote.change}}</span>
+
+          <span class="change-pct">({{stockQuote.changePercent | percent}})</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

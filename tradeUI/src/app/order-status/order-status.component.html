@@ -1,0 +1,21 @@
+<!--   -->
+<div *ngIf="stockOrder" class="row">
+  <div class="col-6" 
+    [class.alert-success]="stockOrder.orderID !== ''"
+    [class.alert-danger]="stockOrder.orderID === ''"> 
+    <div class="alert">
+      <p *ngIf="stockOrder.orderID !== ''">
+        <strong>Success!</strong>
+
+        OrderID: {{stockOrder.orderID}} <br/>
+        Ticker: {{stockOrder.orderTicker}} <br/>
+        Order Quantity: {{stockOrder.orderQuantity}} <br/>
+        Order Total: {{stockOrder.orderTotal | currency:'USD'}}
+      </p>
+
+      <p *ngIf="stockOrder.orderID == ''">
+        <strong>Something went wrong!</strong>
+        Please try again. 
+      </p>
+  </div>
+</div>

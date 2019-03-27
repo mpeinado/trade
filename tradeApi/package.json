@@ -1,0 +1,24 @@
+{
+  "name": "trade-api",
+  "version": "1.0.0",
+  "description": "Trade NodeJs API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect ./server.js",
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "keywords": [
+    "RESTful"
+  ],
+  "author": "marco.peinado",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.16.2",
+    "swagger-jsdoc": "^1.9.7",
+    "uniqid": "^5.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.5"
+  }
+}
