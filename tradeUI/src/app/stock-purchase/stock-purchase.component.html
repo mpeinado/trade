@@ -18,13 +18,27 @@
 	<!-- list of stock orders -->
 	<div class="col-6">
 			<h2>Stock Orders</h2>
-			<ul class="list-group">
-				<li class="list-group-item" *ngFor="let order of stockOrders" >
-					<span> OrderID: {{order.orderID}} </span>
-					<span> Ticker: {{order.orderTicker}} </span> 
-					<span> Order Total: {{order.orderTotal | currency:'USD'}}</span> 
-				</li>
-			</ul>
+
+			<table *ngIf="stockOrders" class="table">
+				<thead>
+					<tr>
+						<th scope="col">OrderID</th>
+						<th scope="col">Ticker</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Total</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr *ngFor="let order of stockOrders">
+						<td>{{order.orderID}}</td>
+						<td>{{order.orderTicker}}</td>
+						<td>{{order.orderQuantity}}</td>
+						<td>{{order.orderTotal | currency :'USD' }}</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<div *ngIf="!stockOrders">No order yet..</div>
 	</div>
 </div>
 

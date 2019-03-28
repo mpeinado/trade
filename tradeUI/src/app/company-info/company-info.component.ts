@@ -1,6 +1,10 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { StockQuote } from '../stockQuote';
 
+
+/**
+ * 
+ */
 @Component({
   selector: 'app-company-info',
   templateUrl: './company-info.component.html',

@@ -12,10 +12,6 @@ import { StockOrderInputs } from '../stockOrderInputs';
   styleUrls: ['./stock-purchase.component.css']
 })
 export class StockPurchaseComponent implements OnInit {
-  
-
-  // -----> Company Info/ Quote
-  // used to display the company info/quote on the view
   stockQuote: StockQuote;
 
   // -----> List of stock orders
@@ -57,11 +53,10 @@ export class StockPurchaseComponent implements OnInit {
           this.stockQuote = quote;
         });
     }else{
-      
+      //@TODO handel bad inputs
     }
 
     this.stockOrder =  null;
-    
   }
 
   /**
@@ -89,7 +84,7 @@ export class StockPurchaseComponent implements OnInit {
           console.log(`There was an error white trying to place an order`);
         });
     }else{
-      // handel error
+      // @TODO handel bad inputs
     }
   }
 

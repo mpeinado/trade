@@ -1,3 +1,6 @@
+/**
+ * Used to capture the response from the server when an order created. 
+ */
 export class StockOrder {
 
     constructor(orderID:string, orderTicker:string, orderQuantity:number, orderTotal){

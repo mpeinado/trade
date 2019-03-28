@@ -10,7 +10,6 @@ import { StockPurchaseService } from '../stock-purchase.service';
   styleUrls: ['./place-stock-order.component.css']
 })
 export class PlaceStockOrderComponent implements OnChanges, OnInit {
-  // used to display the company info/quote on the view
   @Input() stockQuote: StockQuote;
 
   @Output() placeOrder = new EventEmitter();
@@ -28,7 +27,15 @@ export class PlaceStockOrderComponent implements OnChanges, OnInit {
     this.stockQuote = changes.stockQuote.currentValue;
   }
 
+  /**
+   * This event is fired from the place-stock order view. 
+   * It will fire the placeOrder() method on the parent component - stock-purchase
+   * @param ticker 
+   * @param orderQuantity 
+   * @param lastPrice 
+   */
   firePlaceOrder(ticker:string, orderQuantity:number, lastPrice:number) {
+    //@TODO input validation/error handeling
     let orderInputs = new StockOrderInputs(ticker, orderQuantity, lastPrice); 
 
     this.placeOrder.emit(orderInputs);

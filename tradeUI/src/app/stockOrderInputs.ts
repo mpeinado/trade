@@ -1,3 +1,6 @@
+/**
+ * Used to model the input need to place a stock order. 
+ */
 export class StockOrderInputs {
     constructor(ticker:string, orderQuantity:number, lastPrice:number) {
         this.ticker = ticker;

@@ -1,11 +1,11 @@
 <!--   -->
 <div *ngIf="stockOrder" class="row">
-  <div class="col-6" 
+  <div class="col-6 order-status" 
     [class.alert-success]="stockOrder.orderID !== ''"
     [class.alert-danger]="stockOrder.orderID === ''"> 
     <div class="alert">
       <p *ngIf="stockOrder.orderID !== ''">
-        <strong>Success!</strong>
+        <strong>Success!</strong><br/>
 
         OrderID: {{stockOrder.orderID}} <br/>
         Ticker: {{stockOrder.orderTicker}} <br/>

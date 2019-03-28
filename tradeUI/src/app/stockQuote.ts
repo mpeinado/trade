@@ -1,3 +1,7 @@
+/**
+ * Used to model a Stock Quote that we get back from 
+ * https://api.iextrading.com/1.0/stock/${ticker}/quote
+ */
 export class StockQuote {
   symbol:string;
   companyName:string;
